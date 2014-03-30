@@ -1,0 +1,30 @@
+
+<div>
+  <h1 class="title">Update News</h1>
+  <table class="table">
+      <tr>
+          <th class="span2">Date</th>
+          <th class="span2">Title</th>
+          <th class="span4">Details</th>
+          <th class="span1">Edit</th>
+          <th class="span1">Delete</th>
+      </tr>
+      <tr ng-repeat="t in newsList">
+        <td ng-class="{span2: editing, hide: editing}">{{t.date}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.date" type="date" class="input-small" ng-value="t.date"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.desc}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><textarea ng-model="t.desc"  rows=4 class="input-small" >{{t.desc}}</textarea></td>
+        <td ng-class="{span4: editing, hide: editing}">{{t.detail}}</td>
+        <td ng-class="{span4: !editing, hide: !editing}"><textarea ng-model="t.detail" class="input-xxlarge" rows="10">{{t.detail}}</textarea></td>         
+        <td class="span1" ng-click="editing=!editing;x=t;" ng-init="editing=false"><span ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-pencil"/></span></td>
+        <td ng-class="span1" ng-dblclick="newsList.splice(newsList.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+      </tr>
+    
+      <tr>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="d" type="date" class="input-small" ng-value="d"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><textarea ng-model="de" class="input-small" rows=3 ng-value="de"></textarea></td>
+        <td ng-class="{span4: !editing, hide: !editing}"><textarea ng-model="det" class="input-xxlarge" rows=10 ng-value="det"></textarea></td>         
+        <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-click="newsList.push({date:d,detail:det,desc:de})" ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-plus"/></span></td>
+      </tr>
+  </table>
+</div>

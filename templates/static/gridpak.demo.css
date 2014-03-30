@@ -1,0 +1,677 @@
+/*!
+ * Gridpak Beta CSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+ 
+body,
+html,
+div {
+     margin: 0;
+     padding:0;
+     background: black;
+ }
+ 
+/*
+Page is our center aligned 95% width container. We have set it's 'position' as relative
+so that the Gridpak overlay will appear in the correct position. We have also updated
+the gridpak.js file to use '.page' as it's container.
+*/
+.page {
+     margin: 0 auto;
+     max-width: 95%;
+     overflow:hidden;
+     position:relative;
+}
+
+/* Reusable column setup */
+.col {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+    background: #202728;
+	margin-bottom: 12px;
+    -webkit-transition: background-color 300ms cubic-bezier(0.425, 0, 0, 1);
+    -moz-transition: background-color 300ms cubic-bezier(0.425, 0, 0, 1);
+    -ms-transition: background-color 300ms cubic-bezier(0.425, 0, 0, 1);
+    -o-transition: background-color 300ms cubic-bezier(0.425, 0, 0, 1);
+    transition: background-color 300ms cubic-bezier(0.425, 0, 0, 1);
+}
+/*
+.col:hover{
+    background:#70C989;
+}
+
+
+
+    /* 1. 2 Column Grid 0px - 319px 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 50%
+    Span 2: 100%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 0px) and (max-width: 319px) {
+        
+        .row {
+            margin-left:-12px;
+        }
+        .col {
+            border-left-width:12px;
+        	padding:0 12px;
+            height:100px;
+        }
+        
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:50%;
+        }
+        /* Using .col to target ALL columns and make them 100% */
+        .span_2,
+        .col {
+            width:100%;
+            margin-left:0;
+        }
+    }
+
+    /* 2. 6 Column Grid 320px - 919px 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 15.0%
+    Span 2: 32.0%
+    Span 3: 49.0%
+    Span 4: 66.0%
+    Span 5: 83.0%
+    Span 6: 1000%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 320px) and (max-width: 919px) {
+        
+        .col {
+            margin-left:2%;
+        	padding:0 2%;
+        }
+        
+        .row .col:first-child {
+            margin-left:0;
+        }
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:15.0%;
+        }
+        /*
+        Here we have used our semantic names 'navigation' and 'media_block' and appended
+        them next to their corresponding widths
+        */
+        .span_2,
+        .navigation,
+        .media_block {
+            width:32.0%;
+        }
+        .navigation {
+            height: 400px;
+        }
+        .span_3 {
+            width:49.0%;
+        }
+        .span_4,
+        .main_content {
+            width:66.0%;
+            height: 400px;
+        }
+        .span_5 {
+            width:83.0%;
+        }
+        .span_6,
+        .header,
+        .footer,
+        .related_content {
+            width:100%;
+            height: 100px;
+            margin-left:0;
+        }
+    }
+
+    /* 3. 12 Column Grid 920px - Infinity 
+    ----------------------------------------------------------------------------- 
+    
+    Span 1: 8.33333333333%
+    Span 2: 16.6666666667%
+    Span 3: 25.0%
+    Span 4: 33.3333333333%
+    Span 5: 41.6666666667%
+    Span 6: 50.0%
+    Span 7: 58.3333333333%
+    Span 8: 66.6666666667%
+    Span 9: 75.0%
+    Span 10: 83.3333333333%
+    Span 11: 91.6666666667%
+    Span 12: 100%
+    
+    ----------------------------------------------------------------------------- */
+
+    @media screen and (min-width: 920px) {
+        
+        .row {
+            margin-left:-12px;
+        }
+        .col {
+            border-left-width:12px;
+        	padding:0 12px;
+        }
+        
+        
+        /*
+        Add your semantic classnames in alongside their corresponding spans here. e.g.
+        
+        .span_3,
+        .my_semantic_class_name {
+            ...
+        }
+        */
+        
+        .span_1 {
+            width:8.33333333333%;
+        }
+        .span_2 {
+            width:16.6666666667%;
+        }
+        .logo{
+            width: 50%;
+            height: inherit;
+            background: inherit;
+        }
+        .current_content{
+            width: 75%;
+            min-height: 800px;
+            background: #ffffff;
+        }
+        .comment_content{
+            width: 75%;
+            min-height: 100px;
+            background: #ffffff;
+        }
+        .comment{
+            border:0;
+            padding:10px;
+            font-size:1.3em;
+            font-family:Arial, sans-serif;
+            color:#aaa;
+            border:solid 1px #ccc;
+            margin:0 0 20px;
+            width:70%;
+            -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+        .comment_btn{
+            border:solid 1px #ccc;
+            padding:11px 30px;
+            margin:0 0 20px;
+            font-family:Arial, sans-serif;
+            font-size:1.2em;
+            text-transform:uppercase;
+            font-weight:bold;
+            color:#333;
+            cursor:pointer;
+            background-image: -webkit-linear-gradient(top, #ddd, #aaa);
+            background-image: -moz-linear-gradient(top, #ddd, #aaa);
+            background-image: -ms-linear-gradient(top, #ddd, #aaa);
+            background-image: -o-linear-gradient(top, #ddd, #aaa);
+            background-image: linear-gradient(top, #ddd, #aaa);
+        }
+        .comment_btn:hover{
+            background: #aaa;
+        }
+        .commenteduser{
+            background: inherit;
+            font-size: 1.5em;
+            width: 20%;
+            color:#4eaacc;
+        }
+        .commentdetail{
+            background: inherit;
+            font-size: 1.2em;
+            width: 70%;
+        }
+        .commenteddata{
+            word-wrap: break-word;
+            position: relative;
+            min-height: 80px;
+            width: 100%;
+            background: gray;
+        }
+        .commentedrating{
+            position: relative;
+            width: 100%;
+            background: #ffffff;
+        }
+        .like_btn{
+            background: no-repeat url('/guest/www-hitchhiker-vflFsmVVN.webp') 0 -1344px;
+            background-size: auto;
+            width: 20px;
+            height: 20px;
+        }
+        .liked{
+            background: no-repeat url('/guest/www-hitchhiker-vflFsmVVN.webp') -28px -646px;
+        }
+        .like_btn:hover{
+            background: no-repeat url('/guest/www-hitchhiker-vflFsmVVN.webp') -28px -646px;
+        }
+        .dislike_btn{
+            background: no-repeat url('/guest/www-hitchhiker-vflFsmVVN.webp') -48px -1866px;
+            background-size: auto;
+            width: 20px;
+            height: 20px;
+        }
+        .disliked{
+            background-color: gray;
+        }
+        .dislike_btn:hover{
+            background-color: gray;
+        }
+        .form_filed{
+            border:0;
+            padding:10px;
+            font-size:1.3em;
+            font-family:Arial, sans-serif;
+            color:#aaa;
+            border:solid 1px #ccc;
+            margin:0 0 20px;
+            width:90%;
+            -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+            -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+        .top_nav,.top_nav a{
+            color:#3a4c58;
+            top: .3em;
+            height: 1.5em;
+            font-family: inherit;
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            background: inherit;
+            width: 16%;
+            height: 40px;
+        }
+        .top_nav:hover,.top_nav a:hover{
+            color: #A0B5C4;
+        }
+        .navigation{
+            width: 100%;
+            height: 50px;
+        }
+        .static{
+            position: fixed;
+            width: 96%;
+            z-index: 10;
+            -webkit-box-shadow: 1px 7px 4px 0px rgba(0, 0, 0, 0.77);
+        }
+        .menu{
+            color: white;
+            width: 11%;
+            height: inherit;
+            font-weight: bold;
+            -webkit-transition: all 300ms cubic-bezier(0.425, 0, 0, 1);
+        }
+        .menu:hover{
+            background: #70C989;
+        }
+        .player_name{
+            min-width: 20%;
+        }
+        .player_out{
+            min-width: 20%;
+        }
+        .player_other{
+            min-width: 10%;
+        }
+
+        .search{
+            width: 20%;
+            background: inherit;
+            height: inherit;
+            color: #70C989;
+            border-left: 4px solid #202728;
+            -webkit-transition: all 300ms cubic-bezier(0.425, 0, 0, 1);
+        }
+        .search:hover{
+            border-left: 4px solid #70C989;
+            background: white;
+        }
+
+        .search .search_input, .menu .menu_name {
+            position: relative;
+            width: 90%;
+            top: .3em;
+            height: 1.5em;
+            font-family: inherit;
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            vertical-align: middle;
+            letter-spacing: 0.5px;
+            color: inherit;
+            border: none;
+            background: inherit;
+            z-index: 1;
+            opacity: .75;
+        }
+        .submenu{
+            position: relative;
+            background: #202728;
+            top: .8em;
+            height: 1.5em;
+            font-family: inherit;
+            font-size: 14px;
+            font-size: 1.4rem;
+            vertical-align: middle;
+            letter-spacing: 0.5px;
+            color: inherit;
+            border: none;
+            width: 100%;
+            padding-right: 1em;
+            z-index: 1;
+        }
+        .submit_btn{
+            width: 33%;
+            border:solid 1px #ccc;
+            padding:11px 30px;
+            margin:0 0 20px;
+            font-family:Arial, sans-serif;
+            font-size:1.2em;
+            text-transform:uppercase;
+            font-weight:bold;
+            color:#333;
+            cursor:pointer;
+            background-image: -webkit-linear-gradient(top, #ddd, #aaa);
+            background-image: -moz-linear-gradient(top, #ddd, #aaa);
+            background-image: -ms-linear-gradient(top, #ddd, #aaa);
+            background-image: -o-linear-gradient(top, #ddd, #aaa);
+            background-image: linear-gradient(top, #ddd, #aaa);
+        }
+        .submit_btn:hover{
+            background: #aaa;
+        }
+        .trans{
+            left: 1em;
+            height: 1.5em;
+            width: 0px;
+            padding-left: .5em;
+            padding-right: .5em;
+            transition:all 300ms cubic-bezier(0.425,0,0,1);
+            -webkit-transition:all 300ms cubic-bezier(0.425,0,0,1);
+        }
+        .trans:hover{
+            color: black;
+            width: 100%;
+        }
+
+        .trans_color1{
+            background: #ff855c;
+        }
+        .trans_color2{
+            background: #fff62f;
+        }
+        .trans_color3{
+            background: #18e9cd;
+        }
+
+        .search .suggestion{
+            position: relative;
+            width: 90%;
+            height: 1.5em;
+            font-family: inherit;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            vertical-align: middle;
+            letter-spacing: 0.5px;
+            color: gray;
+            border: none;
+            background: inherit;
+            top: -27px !important;
+            z-index: 0;
+        }
+        .search .search_input:focus{
+            outline: 0;
+        }
+
+        .span_3,
+        .related_content {
+            width:25%;
+            height: 400px;
+        }
+        .span_4,
+        .media_block {
+            width:33.3333333333%;
+            height: 200px;
+        }
+        .media_block:hover,.related_content:hover{
+            background: #2B3738;
+        }
+        .span_5 {
+            width:41.6666666667%;
+        }
+        .span_6,
+        .main_content {
+            width:50.0%;
+            height: 400px;
+        }
+        .span_7 {
+            width:58.3333333333%;
+        }
+        .span_8,  {
+            width:66.6666666667%;
+        }
+        .span_9 {
+            width:75.0%;
+        }
+        .span_10 {
+            width:83.3333333333%;
+        }
+        .span_11 {
+            width:91.6666666667%;
+        }
+        .span_12,
+        .header,
+        .footer {
+            width:100%;
+            height: 130px;
+            margin-left:0;
+        }
+        #login,#register{
+            background: inherit;
+            padding: 10em;
+            width: 60%;
+        }
+        .control-group,.controls{
+            background: #202728;
+        }
+        #username,#password,#email{
+            background: whitesmoke;
+            font-weight: bold;
+            margin: 0;
+            width: 100%;
+            font-size: 0.9em;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 100%;
+            border: none;
+            padding: 1rem 1.3rem;
+            color: #2a5669;
+            border-left: 0.3rem solid #fff;
+            display: block;
+            margin-bottom: 1px;
+        }
+        #username:focus,#password:focus,#email:focus{
+            border-left: 0.3rem solid #4eaacc;
+        }
+        .btn{
+            font-weight: bold;
+            -webkit-transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            transition: background 300ms ease-in-out, color 300ms ease-in-out;
+            background: #a3cddd;
+            border: none;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            color: #7eb9cf;
+            display: block;
+            font-size: 0.9em;
+            text-align: left;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            padding: 1rem 1.5rem;
+        }
+        .btn:hover{
+            background: #62b4d2;
+            color: #3491b3;
+        }
+        .title{
+            background: inherit;
+            color: #3491b3 ;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: #A0B5C4;
+            font-weight: bold;
+        }
+        a:hover{
+            color: black;
+        }
+        .related_content a{
+            font-size: 16px;
+        }
+        li{
+            padding-top: .2em;
+        }
+
+        .element_header{
+            margin-top: 20px;
+            position: relative;
+            color: #ffffff;
+            padding: 0 15px;
+            font-size: 1.8rem;
+            line-height: 44px;
+        }
+        .slide_header{
+            position: relative;
+            top: -100px;
+            height: 95px;
+            color: white;
+            background: #202728;
+            opacity: .8;
+            width: 100%;
+            z-index: 1;
+        }
+        .slide_header:hover{
+            background: #3a4c58;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 50px;
+            border: 5px solid #1f282d;
+        }
+        ::-webkit-scrollbar-thumb:vertical {
+            background-color: #8c8d8e;
+            height: 100px;
+        }
+        ::-webkit-scrollbar-thumb:horizontal {
+            background-color: #8c8d8e;
+            height: 16px !important;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: white;
+        }
+
+        ::-webkit-scrollbar {
+            height: 16px;
+            width: 16px;
+            background-color: #1f282d;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #1f282d;
+        }
+        .header_logo{
+            background: #70C989;
+        }
+        li{
+            list-style-type: decimal;
+        }
+        .photo_gallery{
+            cursor: pointer;
+            height: 250px;
+            width: 250px;
+        }
+        .fullsize{
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden!important;
+            position: fixed;
+            z-index: 500;
+            opacity: .95;
+        }
+        .slide_align{
+            position: relative;
+            padding: 20% 30%;
+        }
+        .fullsize img{
+            position: relative;
+            height: 400px;
+            width: 400px;
+        }
+        .photo_left{
+            margin-top: 30%;
+            font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+            line-height: 1.28;
+            display: block;
+            background: no-repeat url('/guest/y6L82CqWy8N.png') -403px -303px;
+            width: 47px;
+            height: 70px;
+        }
+        .photo_left:hover{
+            background-color: #ffffff;
+        }
+        .photo_right{
+            margin-top: 30%;
+            font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+            line-height: 1.28;
+            display: block;
+            background: no-repeat url('/guest/y6L82CqWy8N.png') -190px -535px;
+            width: 47px;
+            height: 70px;
+        }
+        .photo_right:hover{
+            background-color: #ffffff;
+        }
+    }

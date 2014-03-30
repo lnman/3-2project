@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    <div class="title"><h1>Teams</h1></div>
+    	{% if all_team %}
+            <ul>
+            {% for t in all_team %}
+                <li><a href="{% url 'teamview' t.id %}">{{ t.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No team has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+

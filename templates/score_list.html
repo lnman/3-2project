@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    <div class="title"><h1>Score List</h1></div>
+    	{% if all_scores %}
+            <ul>
+            {% for score in all_scores %}
+                <li><a href="{% url 'scoreview' score.id %}">{{ score.matchid.team1.name }} vs {{ score.matchid.team2.name }}</a> - {{ score.result }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+

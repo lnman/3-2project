@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    	<h1>{{ score.matchid.team1.name }} vs {{ score.matchid.team2.name }}</h1>
+        <p>Toss: {{ score.toss }} won</p>
+        <p>Final result: {{ score.result }}</p>
+        <p>Man of the match:{{ score.mom }}</p>
+        <table>
+        <caption><h3>{{ bat1 }} Batting Detail</h3></caption>
+            <thead>
+                <td class="player_name">Player Name</td>
+                <td class="player_out">Out</td>
+                <td class="player_other">Run</td>
+                <td class="player_other">Minute</td>
+                <td class="player_other">Ball</td>
+                <td class="player_other">Four</td>
+                <td class="player_other">Six</td>
+                <td class="player_other">Strikerate</td>
+            </thead>
+            {% for player in ba1 %}
+            <tr>
+                <td class="player_name"><a href="{% url 'playerview' player.name_id %}">{{ player.name }}</a></td>
+                <td class="player_out">{{ player.outtype }}</td>
+                <td class="player_other">{{ player.run }}</td>
+                <td class="player_other">{{ player.minute }}</td>
+                <td class="player_other">{{ player.ball }}</td>
+                <td class="player_other">{{ player.four }}</td>
+                <td class="player_other">{{ player.six }}</td>
+                <td class="player_other">{{ player.strikerate }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table>
+        <caption><h3>{{ bat2 }} Batting Detail</h3></caption>
+            <thead>
+                <td class="player_name">Player Name</td>
+                <td class="player_out">Out</td>
+                <td class="player_other">Run</td>
+                <td class="player_other">Minute</td>
+                <td class="player_other">Ball</td>
+                <td class="player_other">Four</td>
+                <td class="player_other">Six</td>
+                <td class="player_other">Strikerate</td>
+            </thead>
+            {% for player in ba2 %}
+            <tr>
+                <td class="player_name"><a href="{% url 'playerview' player.name_id %}">{{ player.name }}</a></td>
+                <td class="player_out">{{ player.outtype }}</td>
+                <td class="player_other">{{ player.run }}</td>
+                <td class="player_other">{{ player.minute }}</td>
+                <td class="player_other">{{ player.ball }}</td>
+                <td class="player_other">{{ player.four }}</td>
+                <td class="player_other">{{ player.six }}</td>
+                <td class="player_other">{{ player.strikerate }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table>
+        <caption><h3>{{ bat2 }}Bowling Detail</h3></caption>
+            <thead>
+                <td class="player_name">Player Name</td>
+                <td class="player_other">Over</td>
+                <td class="player_other">Run</td>
+                <td class="player_other">Maiden</td>
+                <td class="player_other">Wicket</td>
+                <td class="player_other">Economy</td>
+            </thead>
+            {% for player in bo1 %}
+            <tr>
+                <td class="player_name"><a href="{% url 'playerview' player.name_id %}">{{ player.name }}</a></td>
+                <td class="player_other">{{ player.over }}</td>
+                <td class="player_other">{{ player.run }}</td>
+                <td class="player_other">{{ player.maiden }}</td>
+                <td class="player_other">{{ player.wicket }}</td>
+                <td class="player_other">{{ player.economy }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table>
+        <caption><h3>{{ bat1 }}Bowling Detail</h3></caption>
+            <thead>
+                <td class="player_name">Player Name</td>
+                <td class="player_other">Over</td>
+                <td class="player_other">Run</td>
+                <td class="player_other">Maiden</td>
+                <td class="player_other">Wicket</td>
+                <td class="player_other">Economy</td>
+            </thead>
+            {% for player in bo2 %}
+            <tr>
+                <td class="player_name"><a href="{% url 'playerview' player.name_id %}">{{ player.name }}</a></td>
+                <td class="player_other">{{ player.over }}</td>
+                <td class="player_other">{{ player.run }}</td>
+                <td class="player_other">{{ player.maiden }}</td>
+                <td class="player_other">{{ player.wicket }}</td>
+                <td class="player_other">{{ player.economy }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+

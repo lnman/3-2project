@@ -1,0 +1,37 @@
+
+<div>
+  <h1 class="title">Update ScoreCard</h1>
+    <table class="table">
+      <tr>
+          <th class="span2">Date</th>
+          <th class="span2">Winner</th>
+          <th class="span2">RunnerUp</th>
+          <th class="span2">Matchtype</th>
+          <th class="span2">ScoreCard</th>
+          <th class="span1">Edit</th>
+          <th class="span1">Delete</th>
+      </tr>
+      <tr ng-repeat="t in scores">
+        <td ng-class="{span2: editing, hide: editing}">{{t.date}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.date" type="date" class="input-small" ng-value="t.date"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.winner}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.winner" type="text" class="input-small" ng-value="t.winner"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.loser}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.loser" type="text" class="input-small" ng-value="t.loser"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.type}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.type" type="text" class="input-small" ng-value="t.type"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.desc}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><textarea ng-model="t.desc" class="input" rows="3">{{t.desc}}</textarea></td>         
+        <td class="span1" ng-click="editing=!editing" ng-init="editing=false"><span ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-pencil"/></span></td>
+        <td ng-class="span1" ng-dblclick="scores.splice(scores.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+      </tr>
+      <tr>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="d" type="date" class="input-small" ng-value="d"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="w" type="text" class="input-small" ng-value="w"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="l" type="text" class="input-small" ng-value="l"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t" type="text" class="input-small" ng-value="t"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><textarea ng-model="de" class="input" rows="3">{{de}}</textarea></td>         
+        <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-click="scores.push({date:d,winner:w,loser:l,type:t,desc:de})" ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-plus"/></span></td>
+      </tr>
+    </table>
+</div>

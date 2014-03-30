@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row" ng-controller="MainCtrl">
+    <div class="current_content col">
+    <div class="title"><h1>Recent Photos</h1></div>
+    	{% if photos %}
+            <ul>
+            {% for p in photos %}
+                <img ng-click="showfullimage($event)" class="photo_gallery" src="/guest{{ p.url }}"/>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No photo has been added yet.</p>
+        {% endif %}
+    </div>
+    {% verbatim %}<div class="fullsize" ng-init="showfull=false" ng-show="showfull" ><div class="slide_align"><div ng-click="shownextimage(-1)" class="photo_left col"></div><img class="col" ng-click="vanish()" ng-src="{{currsrc}}"/><div ng-click="shownextimage(1)" class="photo_right col"></div></div> </div>{% endverbatim %}
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+

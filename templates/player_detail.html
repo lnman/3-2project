@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    	<ul><h1>{{ player.name }}</h1></ul>
+        <ul>Born: {{ player.birthdate }}</ul>
+        <ul>Teams: {{ player.teams }}</ul>
+        <ul>Role: {{ player.roll }}</ul>
+        <ul>Batting Style: {{ player.batstyle }}</ul>
+        <ul>Bowling Style: {{ player.bowlstyle }}</ul>
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+

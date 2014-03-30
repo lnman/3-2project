@@ -1,0 +1,20 @@
+
+<div>
+  <h1 class="title">Player List</h1>
+    <table class="table">
+      <tr>
+          <th class="span2">Name</th>
+          <th class="span2">Age</th>
+          <th class="span4">Teams</th>
+          <th class="span2">Edit</th>
+          <th class="span2">Delete</th>
+      </tr>
+      <tr ng-repeat="t in players">
+        <td class="span2">{{t.name}}</td>
+        <td class="span2">{{t.age}}</td>
+        <td class="span4">{{t.teams}}</td>
+        <td class="span2"><a ng-href="#/player_profile/{{players.indexOf(t)}}" class="glyphicon glyphicon-pencil"></a></td>
+        <td ng-class="span2" ng-dblclick="players.splice(players.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+      </tr>
+    </table>
+</div>

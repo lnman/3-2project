@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+        <h1>Admin Control Panel</h1>
+
+          <form class="form-horizontal" name="addplayerForm" action="#" method="post">
+              <div class="title"><h1>Add Player</h1></div>
+                {% csrf_token %}
+                <input class="form_filed" type="text" name="name"  placeholder="name">
+                <input class="form_filed" type="text" name="imageurl"  placeholder="@imageurl">
+                <input class="form_filed" type="text" name="bday"  placeholder="birthdate">
+                <textarea class="form_filed" rows="4" cols="50" type="text" name="teams" >Teams</textarea>
+                <input class="form_filed" type="text" name="role"  placeholder="role">
+                <input class="form_filed" type="text" name="batstyle"  placeholder="batstyle">
+                <input class="form_filed" type="text" name="bowlstyle"  placeholder="bowlstyle">
+                <button class="submit_btn" type="submit">Add Player</button>
+			</form>
+        <div class="title"><h1>Player List</h1></div>
+    	{% if all_players %}
+            <ul>
+            {% for player in all_players %}
+                <li><a href="{% url 'playerview' player.id %}">{{ player.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+

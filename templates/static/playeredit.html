@@ -1,0 +1,17 @@
+
+<div>
+  <h1 class="title">Update Player Profile</h1>
+    <div class="span8">
+    <table class="table" ng-init="t=players[params.id]">
+        <tr><span class="span2">Name:</span><input class="offset2" ng-model="t.name" type="text" class="input" ng-value="t.name"/></tr><br/>
+        <tr><span class="span2">imageURL:</span><input class="offset2" ng-model="t.imageURL" type="text" class="input" ng-value="t.imageURL"/></tr><br/>
+        <tr><span class="span2">Age:</span><input class="offset2" ng-model="t.age" type="text" class="input" ng-value="t.age"/></tr><br/>
+        <tr><span class="span2">Teams:</span><input class="offset2" ng-model="t.teams" type="text" class="input" ng-value="t.teams"/></tr><br/>
+        <tr><span class="span2">Role:</span><input class="offset2" ng-model="t.role" type="text" class="input" ng-value="t.role"/></tr><br/>
+        <tr><span class="span2">BatStyle:</span><input class="offset2" ng-model="t.batstyle" type="text" class="input" ng-value="t.batstyle"/></tr><br/>
+        <tr><span class="span2">BowlStyle:</span><input class="offset2" ng-model="t.bowlstyle" type="text" class="input" ng-value="t.bowlstyle"/></tr><br/>
+        <tr><span class="offset4"><button ng-click="players[params.id]=t" class="btn">Save</button></span></tr>
+    </table>
+    </div>
+    <div class="span3"><img ng-src="{{t.imageURL}}"/></div>
+</div>

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+        <form class="form-horizontal" name="statForm" action="#" method="post">
+				{% csrf_token %}
+				Player Id:<input type="text" name="player_id">
+				<button type="submit">submit</button>
+			</form>
+        <div>
+
+        </div>
+        <style>
+            .chart div {
+              font: 10px sans-serif;
+              background-color: steelblue;
+              text-align: right;
+              padding: 3px;
+              margin: 1px;
+              color: white;
+            }
+        </style>
+    <br/>
+    <div class="title"><h1>Barchart of run of {{ name }}</h1></div>
+        <div class="chart">
+            {% for data in runs %}
+          <div style="width: {{ data }}0px;">{{ data }}</div>
+            {% endfor %}
+        </div>
+    <div class="title"><h1>Barchart of Wickets of {{ name }}</h1></div>
+        <div class="chart">
+            {% for data in wickets %}
+          <div style="width: {{ data }}0px;">{{ data }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+

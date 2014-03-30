@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+        <h1>Admin Control Panel</h1>
+          <form class="form-horizontal" name="addmatchForm" action="#" method="post">
+				{% csrf_token %}
+              Team1
+                <select name="T1">
+                    <option value="1">UAE</option>
+                    <option value="2">South Africa</option>
+                    <option value="3" selected>Zimbabwe</option>
+                    <option value="4">Afganistan</option>
+                    <option value="5">Sri Lanka</option>
+                    <option value="6">West Indies</option>
+                    <option value="7">New Zealand</option>
+                    <option value="8" >Pakistan</option>
+                    <option value="9">Netherland</option>
+                    <option value="10">Ireland</option>
+                    <option value="11">Hong kong</option>
+                    <option value="12">Nepal</option>
+                    <option value="13">England</option>
+                    <option value="14">Bangladesh</option>
+                </select>
+              Team2
+                <select name="T2">
+                    <option value="1">UAE</option>
+                    <option value="2">South Africa</option>
+                    <option value="3">Zimbabwe</option>
+                    <option value="4">Afganistan</option>
+                    <option value="5">Sri Lanka</option>
+                    <option value="6">West Indies</option>
+                    <option value="7">New Zealand</option>
+                    <option value="8" >Pakistan</option>
+                    <option value="9">Netherland</option>
+                    <option value="10">Ireland</option>
+                    <option value="11">Hong kong</option>
+                    <option value="12">Nepal</option>
+                    <option value="13">England</option>
+                    <option value="14" selected>Bangladesh</option>
+                </select>
+				<input type="text" name="venue"  placeholder="where">
+				<input type="text" name="date"  placeholder="when">
+                <input type="text" name="mtype"  placeholder="Test/ODI/T20">
+				<button type="submit">Add Match</button>
+			</form>
+        <div class="title"><h1>Fixture</h1></div>
+            {% if fixtures %}
+                <ul>
+                {% for t in fixtures %}
+                    <li>{{ t.date }} - {{ t.team1.name }} vs. {{ t.team2.name }} -{{ t.venue }} - {{ t.mtype }} </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No team has been added yet.</p>
+            {% endif %}
+
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+

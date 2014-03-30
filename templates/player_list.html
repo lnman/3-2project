@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    <div class="title"><h1>Player List</h1></div>
+    	{% if all_players %}
+            <ul>
+            {% for player in all_players %}
+                <li><a href="{% url 'playerview' player.id %}">{{ player.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+

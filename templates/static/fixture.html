@@ -1,0 +1,29 @@
+
+<div>
+  <h1 class="title">Update Fixture</h1>
+    <table class="table">
+      <tr>
+          <th class="span2">Date</th>
+          <th class="span2">Time</th>
+          <th class="span4">Details</th>
+          <th class="span2">Edit</th>
+          <th class="span2">Delete</th>
+      </tr>
+      <tr ng-repeat="t in fixtures">
+        <td ng-class="{span2: editing, hide: editing}">{{t.date}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.date" type="date" class="input-small" ng-value="t.date"/></td>
+        <td ng-class="{span2: editing, hide: editing}">{{t.time}}</td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.time" type="time" class="input-small" ng-value="t.time"/></td>
+        <td ng-class="{span4: editing, hide: editing}">{{t.desc}}</td>
+        <td ng-class="{span4: !editing, hide: !editing}"><textarea ng-model="t.desc" class="input-xlarge" rows="3">{{t.desc}}</textarea></td>         
+        <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-pencil"/></span></td>
+        <td ng-class="span2" ng-dblclick="fixtures.splice(fixtures.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+      </tr>
+      <tr>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="d" type="date" class="input-small" ng-value="d"/></td>
+        <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t" type="time" class="input-small" ng-value="t"/></td>
+        <td ng-class="{span4: !editing, hide: !editing}"><textarea ng-model="de" class="input-xlarge" rows=3 ng-value="de"></textarea></td>         
+        <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-click="fixtures.push({date:d,time:t,desc:de})" ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-plus"/></span></td>
+      </tr>
+    </table>
+</div>

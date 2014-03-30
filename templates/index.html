@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    {% verbatim %}
+    <div class="main_content col" >
+        <img height="400" width="570" slideshow ng-init="slides=['1.jpg','2.jpg','3.jpg','4.jpg'];" ng-src="{{imsrc}}"/>
+        <div class="slide_header">{{ imdesc }}</div>
+    </div>
+    {% endverbatim %}
+    <div class="related_content col">
+    <header class="element_header"><span>Recent News</span></header>
+        {% for n in news %}
+        <li><a href="{% url 'newsview' n.id %}">{{ n.caption }} - {{ n.date }}</a></li>
+        {% endfor %}
+    </div>
+    <div class="related_content col">
+        <header class="element_header"><span>Fixtures</span></header>
+        {% for t in fixtures %}
+        <li><a>{{ t.date }} - {{ t.team1.name }} vs. {{ t.team2.name }} -{{ t.venue }}</a></li>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="row">
+    <div class="media_block col">
+        <header class="element_header"><span>Recent matches</span></header>
+        {% if all_scores %}
+            <ul>
+            {% for score in all_scores %}
+                <li><a href="{% url 'scoreview' score.id %}">{{ score.matchid.team1.name }} vs {{ score.matchid.team2.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="media_block col">
+        <header class="element_header"><span>Current Players</span></header>
+    	{% if all_players %}
+            <ul>
+            {% for player in all_players %}
+                <li><a href="{% url 'playerview' player.id %}">{{ player.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="media_block col">
+        <header class="element_header"><span>Teams</span></header>
+        {% if all_team %}
+            <ul>
+            {% for t in all_team %}
+                <li><a href="{% url 'teamview' t.id %}">{{ t.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No team has been added yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
+
+            
+            

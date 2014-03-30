@@ -1,0 +1,63 @@
+
+<div>
+  <h1>Update Ranking</h1>
+  <tabs>
+      <pane title="Team">
+        <table class="table" ng-init="order='rating'">
+          <tr>
+              <th class="span2">Country</th>
+              <th class="span2">Matches</th>
+              <th class="span2">Point</th>
+              <th class="span2">Rating</th>
+              <th class="span2">Edit</th>
+              <th class="span2">Delete</th>
+          </tr>
+          <tr ng-repeat="t in oditeam | orderBy:order:true">
+            <td ng-class="{span2: editing, hide: editing}">{{t.name}}</td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.name" type="text" class="input-small" ng-value="t.name"/></td>
+            <td ng-class="{span2: editing, hide: editing}">{{t.match}}</td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.match" type="number" class="input-small" ng-value="t.match"/></td>
+            <td ng-class="{span2: editing, hide: editing}">{{t.point}}</td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.point" type="number" class="input-small" ng-value="t.point"/></td>
+            <td class="span2">{{t.rating}}</td>
+            <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-class="{hide:!editing}"><span ng-click="t.rating=Math.round(t.point/t.match)" class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-pencil"></span></span></td>
+            <td ng-class="span2" ng-dblclick="oditeam.splice(oditeam.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+          </tr>
+          <tr>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="n" type="text" class="input-small" ng-value="n"/></td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="m" type="number" class="input-small" ng-value="m"/></td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="p" type="number" class="input-small" ng-value="p"/></td>         
+            <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-click="oditeam.push({name:n,match:m,point:p,rating:p/m})" ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-plus"/></span></td>
+          </tr>
+        </table>
+      </pane>
+      <pane title="Player">
+          <table class="table" ng-init="order='rating'">
+          <tr>
+              <th class="span2">Name</th>
+              <th class="span2">Country</th>
+              <th class="span2">Rating</th>
+              <th class="span2">Edit</th>
+              <th class="span2">Delete</th>
+          </tr>
+          <tr ng-repeat="t in testallrounder | orderBy:order:true">
+            <td ng-class="{span4: editing, hide: editing}">{{t.name}}</td>
+            <td ng-class="{span4: !editing, hide: !editing}"><input ng-model="t.name" type="text" class="input-small" ng-value="t.name"/></td>
+            <td ng-class="{span2: editing, hide: editing}">{{t.country}}</td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.country" type="text" class="input-small" ng-value="t.country"/></td>
+            <td ng-class="{span2: editing, hide: editing}">{{t.rating}}</td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="t.rating" type="number" class="input-small" ng-value="t.rating"/></td>
+            <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-pencil"/></span></td>
+            <td ng-class="span2" ng-dblclick="testallrounder.splice(testallrounder.indexOf(t),1);"><span class="glyphicon glyphicon-remove"/></td>
+          </tr>
+          <tr>
+            <td ng-class="{span4: !editing, hide: !editing}"><input ng-model="n" type="text" class="input-small" ng-value="n"/></td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="c" type="text" class="input-small" ng-value="c"/></td>
+            <td ng-class="{span2: !editing, hide: !editing}"><input ng-model="r" type="number" class="input-small" ng-value="r"/></td>         
+            <td class="span2" ng-click="editing=!editing" ng-init="editing=false"><span ng-click="testallrounder.push({name:n,country:c,rating:r})" ng-class="{hide:!editing}"><span class="glyphicon glyphicon-save"></span></span><span ng-class="{hide:editing}"><span class="glyphicon glyphicon-plus"/></span></td>
+          </tr>
+        </table>
+      </pane>
+    </tabs>
+</div>
+<br/>

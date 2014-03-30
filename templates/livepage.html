@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div liveupdate class="current_content col" ng-controller="MainCtrl">
+          {% verbatim %}<h3>Livescores at {{datatime}}</h3>
+          <ul>
+              <li ng-repeat="thing in livedata">
+              <a ng-click="show_live_data($event)" livelink="{{thing.link}}" href="">{{thing.title}}</a>{% endverbatim %}
+              </li>
+          </ul>
+        <ul>
+            <li class="domdata"></li>
+        </ul>
+    </div>
+    <div class="hiddendom" ng-show="false"></div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+            
+            

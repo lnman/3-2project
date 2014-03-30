@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    	<div id="register">
+            <div class="title"><h1>SignUp</h1></div>
+			<form class="form-horizontal" name="RegisterForm" action="#" method="post">
+				{% csrf_token %}
+				{% if next %}
+				<input type="hidden" name="next" value="{{ next }}" />
+				{% endif %}
+				<div class="control-group">
+				<div class="controls">
+				<input type="text" id="username" name="username"  placeholder="Username">
+				</div>
+				</div>
+				<div class="control-group">
+				<div class="controls">
+				<input type="password" name="password" id="password" placeholder="Password">
+				</div>
+				</div>
+				<div class="control-group">
+				<div class="controls">
+				<input type="email" name="email" id="email" placeholder="email">
+				</div>
+				</div>
+				<div class="control-group">
+				<div class="controls">
+				<button type="submit" class="btn">SIGNUP...</button>
+				</div>
+				</div>
+                <div class="control-group">
+				<div class="controls">
+				<p id="username">{{ msg }}</p>
+				</div>
+				</div>
+			</form>
+		</div>
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+            
+            

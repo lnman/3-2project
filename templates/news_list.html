@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    <div class="title"><h1>Recent News</h1></div>
+    	{% if news %}
+            <ul>
+            {% for n in news %}
+                <li><a href="{% url 'newsview' n.id %}">{{ n.caption }}</a> - <p>{{ n.date }}<p> </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+
+
+

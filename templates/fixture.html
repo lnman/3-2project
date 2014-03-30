@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    <div class="title"><h1>Fixture</h1></div>
+    	{% if fixtures %}
+            <ul>
+            {% for t in fixtures %}
+                <li>{{ t.date }} - {{ t.team1.name }} vs. {{ t.team2.name }} -{{ t.venue }} - {{ t.mtype }} </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No team has been added yet.</p>
+        {% endif %}
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+

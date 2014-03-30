@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+        <h1>Admin Control Panel</h1>
+
+          <form class="form-horizontal" name="addnewsForm" action="#" method="post">
+              <div class="title"><h1>Add News</h1></div>
+				{% csrf_token %}
+				<input class="form_filed" type="text" name="caption"  placeholder="caption">
+				<textarea class="form_filed" rows="4" cols="50" type="text" name="body" >Body</textarea>
+                <input class="form_filed" type="text" name="date"  placeholder="when">
+                <input class="form_filed" type="text" name="photourl"  placeholder="@url">
+				<button class="submit_btn" type="submit">Add News</button>
+			</form>
+        <div class="title"><h1>Recent News</h1></div>
+    	{% if news %}
+            <ul>
+            {% for n in news %}
+                <li><a href="{% url 'newsview' n.id %}">{{ n.caption }}</a> - <p>{{ n.date }}<p> </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No player has been added yet.</p>
+        {% endif %}
+
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+
+

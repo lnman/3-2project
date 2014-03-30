@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    	<h1>{{ team.name }}</h1>
+        <ul>{% for tt in team.squad %}
+            <li> {{ tt }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+</div>
+{% endblock content %}
+
+

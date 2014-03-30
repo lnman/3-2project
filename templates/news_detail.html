@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="current_content col">
+    	<h1>{{ news.caption }}</h1>
+        <h3>{{ news.body }}</h3>
+        <p>{{ news.date }}</p>
+    </div>
+    <div class="related_content col">Related content</div>
+    <div class="related_content col">Related content</div>
+    <div class="comment_content col">
+        <br/>
+        <form class="form-horizontal" name="LoginForm" action="/guest/comment" method="post">
+            {% csrf_token %}
+                <input class="comment" type="text" comment id="comment" name="comment"  placeholder="Comment...">
+                <button type="submit" class="comment_btn">Comment</button>
+        </form>
+
+    </div>
+    {% for comm in comments %}
+        <div class="comment_content col">
+        <br/>
+            <div class="commenteduser col">{{ comm.userid }}</div>
+            <div class="commentdetail col">
+                <div class="commenteddata col"><p>{{ comm.message }}</p></div>
+                <div  class="commentedrating col">
+                    <a href="{% url 'rateview' comm.id 1 %}">
+                        <img  src="/guest/pixel-vfl3z5WfW.gif" class="{% for rate in rating %} {% if rate.commentid == comm %} {% if rate.likeordislike == 1 %} liked {% endif %} {% endif %} {% endfor %} like_btn"/>
+                    </a>{{ comm.numlike }}
+
+                     <a href="{% url 'rateview' comm.id 2 %}">
+                        <img  src="/guest/pixel-vfl3z5WfW.gif" class="{% for rate in rating %} {% if rate.commentid == comm %} {% if rate.likeordislike == 2 %} disliked {% endif %} {% endif %} {% endfor %} dislike_btn"/>
+                    </a>{{ comm.numdislike }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
